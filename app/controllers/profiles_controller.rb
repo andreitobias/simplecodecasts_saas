@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
     def new
         # form where a user can fill out their own profile.
         @user = User.find( params[:user_id] )
-        @profile = @user.build_profile
+        @profile = Profile.new
     end
     
     def create 
@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
     else
       render action: :new
     end
-  end
+    end
   
   private
     def profile_params
