@@ -21,6 +21,10 @@ class ContactsController < ApplicationController
     end
   end
   
+  def show
+    @contact = Contact.find( params[:id] )
+  end
+  
   private
     def contact_params
       params.require(:contact).permit(:name, :email, :comments)
